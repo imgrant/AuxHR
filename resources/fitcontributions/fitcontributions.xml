@@ -1,0 +1,70 @@
+<resources>
+  <fitContributions>
+
+    <fitField id="0"
+      displayInChart="true"
+      displayInActivityLaps="false"
+      displayInActivitySummary="false"
+      sortOrder="0"
+      precision="0"
+      chartTitle="@Strings.lCurrentHeartRate"
+      dataLabel="@Strings.lCurrentHeartRate"
+      unitLabel="@Strings.lHeartRateUnits"
+      fillColor="#f25b0a" />
+
+    <fitField id="1"
+      displayInChart="false"
+      displayInActivityLaps="true"
+      displayInActivitySummary="false"
+      sortOrder="1"
+      precision="0"
+      dataLabel="@Strings.lAvgHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+
+    <fitField id="2"
+      displayInChart="false"
+      displayInActivityLaps="false"
+      displayInActivitySummary="true"
+      sortOrder="1"
+      precision="0"
+      dataLabel="@Strings.lAvgHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+
+    <fitField id="3"
+      displayInChart="false"
+      displayInActivityLaps="true"
+      displayInActivitySummary="false"
+      sortOrder="2"
+      precision="0"
+      dataLabel="@Strings.lMaxHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+
+    <fitField id="4"
+      displayInChart="false"
+      displayInActivityLaps="false"
+      displayInActivitySummary="true"
+      sortOrder="2"
+      precision="0"
+      dataLabel="@Strings.lMaxHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+
+    <fitField id="5"
+      displayInChart="false"
+      displayInActivityLaps="true"
+      displayInActivitySummary="false"
+      sortOrder="3"
+      precision="0"
+      dataLabel="@Strings.lMinHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+      
+    <fitField id="6"
+      displayInChart="false"
+      displayInActivityLaps="false"
+      displayInActivitySummary="true"
+      sortOrder="3"
+      precision="0"
+      dataLabel="@Strings.lMinHeartRate"
+      unitLabel="@Strings.lHeartRateUnits" />
+
+  </fitContributions>
+</resources>

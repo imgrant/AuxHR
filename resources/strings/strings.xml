@@ -1,0 +1,9 @@
+<strings>
+    <string id="AppName">Auxiliary Heart Rate</string>
+    <string id="AppVersion">1.0.0</string>
+    <string id="lCurrentHeartRate">Heart Rate</string>
+    <string id="lAvgHeartRate">Avg HR</string>
+    <string id="lMaxHeartRate">Max HR</string>
+    <string id="lMinHeartRate">Min HR</string>
+    <string id="lHeartRateUnits">bpm</string>
+</strings>
