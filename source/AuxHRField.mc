@@ -10,27 +10,41 @@ class AuxHRField extends Ui.SimpleDataField {
 
     hidden var mFitContributor;
     hidden var mSensor;
+    hidden var mSensorFound = false;
+    hidden var mTicker = 0;
 
     function initialize(sensor) {
         SimpleDataField.initialize();
         mSensor = sensor;
         mFitContributor = new AuxHRFitContributor(self);
-        label = "Heart Rate";
+        label = "Aux. Heart Rate";
     }
 
     function compute(info) {
         mFitContributor.compute(mSensor);
 
         if (mSensor == null) {
+            mSensorFound = false;
             return "No Channel!";
         } else if (true == mSensor.searching) {
+            mSensorFound = false;
             return "Searching...";
         } else {
-            var heartRate = mSensor.data.currentHeartRate;
-            if (heartRate == null) {
-                return "--";
+            if (!mSensorFound) {
+                mSensorFound = true;
+                mTicker = 0;
+            }
+            if (mSensorFound && mTicker < 5) {
+                var auxHRAntID = mSensor.deviceCfg.deviceNumber;
+                mTicker++;
+                return "Found " + auxHRAntID;
             } else {
-                return heartRate.format("%d");
+                var heartRate = mSensor.data.currentHeartRate;
+                if (heartRate == null) {
+                    return "--";
+                } else {
+                    return heartRate.format("%d");
+                }
             }
         }
     }

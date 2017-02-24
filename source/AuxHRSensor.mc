@@ -37,7 +37,7 @@ class AuxHRSensor extends Ant.GenericChannel {
         }
     }
 
-    function initialize() {
+    function initialize(mAntID) {
         // Get the channel
         chanAssign = new Ant.ChannelAssignment(
             Ant.CHANNEL_TYPE_RX_NOT_TX,
@@ -46,7 +46,7 @@ class AuxHRSensor extends Ant.GenericChannel {
 
         // Set the configuration
         deviceCfg = new Ant.DeviceConfig( {
-            :deviceNumber => 0,                 //Wildcard our search
+            :deviceNumber => mAntID,             //Set to 0 to use wildcard search
             :deviceType => DEVICE_TYPE,
             :transmissionType => 0,
             :messagePeriod => PERIOD,

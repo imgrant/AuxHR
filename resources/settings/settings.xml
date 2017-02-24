@@ -1,0 +1,5 @@
+<settings>
+  <setting propertyKey="@Properties.pAuxHRAntID" title="@Strings.lAuxHRAntID" prompt="@Strings.lAuxHRAntIDPrompt">
+    <settingConfig type="numeric" min="0"/>
+  </setting>
+</settings>
