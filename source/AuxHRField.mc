@@ -8,7 +8,6 @@ using Toybox.Graphics as Gfx;
 
 class AuxHRField extends Ui.SimpleDataField {
 
-    hidden var mFitContributor;
     hidden var mSensor;
     hidden var mSensorFound = false;
     hidden var mTicker = 0;
@@ -16,12 +15,10 @@ class AuxHRField extends Ui.SimpleDataField {
     function initialize(sensor) {
         SimpleDataField.initialize();
         mSensor = sensor;
-        mFitContributor = new AuxHRFitContributor(self);
         label = "Aux. Heart Rate";
     }
 
     function compute(info) {
-        mFitContributor.compute(mSensor);
 
         if (mSensor == null) {
             mSensorFound = false;
@@ -48,29 +45,4 @@ class AuxHRField extends Ui.SimpleDataField {
             }
         }
     }
-
-    function onTimerStart() {
-        mFitContributor.setTimerRunning( true );
-    }
-
-    function onTimerStop() {
-        mFitContributor.setTimerRunning( false );
-    }
-
-    function onTimerPause() {
-        mFitContributor.setTimerRunning( false );
-    }
-
-    function onTimerResume() {
-        mFitContributor.setTimerRunning( true );
-    }
-
-    function onTimerLap() {
-        mFitContributor.onTimerLap();
-    }
-
-    function onTimerReset() {
-        mFitContributor.onTimerReset();
-    }
-
-}
+ }
