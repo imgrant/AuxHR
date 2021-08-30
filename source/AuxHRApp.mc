@@ -17,7 +17,7 @@ class AuxHRApp extends App.AppBase {
             mSensor = new AuxHRSensor(mAntID);
             mSensor.open();
         } catch(e instanceof Ant.UnableToAcquireChannelException) {
-            Sys.println(e.getErrorMessage());
+            System.println(e.getErrorMessage());
             mSensor = null;
         }
     }
