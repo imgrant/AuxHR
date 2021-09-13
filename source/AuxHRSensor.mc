@@ -81,6 +81,7 @@ class AuxHRSensor extends Ant.GenericChannel {
                 searching = false;
                 // Update our device configuration primarily to see the device number of the sensor we paired to
                 deviceCfg = GenericChannel.getDeviceConfig();
+                System.println("Found: " + deviceCfg.deviceNumber);
             }
             var dp = new HeartRateDataPage();
             dp.parse(msg.getPayload(), data);
@@ -89,8 +90,10 @@ class AuxHRSensor extends Ant.GenericChannel {
                 if (Ant.MSG_CODE_EVENT_CHANNEL_CLOSED == (payload[1] & 0xFF)) {
                     // Channel closed, re-open
                     open();
+                    System.println("Re-open");
                 } else if( Ant.MSG_CODE_EVENT_RX_FAIL_GO_TO_SEARCH  == (payload[1] & 0xFF) ) {
                     searching = true;
+                    System.println("Fail go to search");
                 }
             } else {
                 //It is a channel response.
